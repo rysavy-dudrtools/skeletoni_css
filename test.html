@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8" />
+    <title>Skeleton: Responsive CSS Boilerplate</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="./normalize.min.css" />
+    <link rel="stylesheet" href="./skeletoni.css" />
+    <link rel="stylesheet" href="./custom.css" />
+  </head>
+
+  <body class="code-snippets-visible">
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+      <section class="header">
+        <h1 class="title">A dead simple, responsive CSS.</h1>
+        <a
+          class="button button-primary"
+          href="https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip"
+          onClick="_gaq.push(['_trackEvent', 'skeleton', 'download'])"
+          >Download</a
+        >
+      </section>
+
+      <!-- Skeletoni info -->
+      <div id="grid">
+        <h2>What is Skeletoni</h2>
+
+        <p>
+          Skeletoni is based on the great
+          <a href="http://www.getskeleton.com">Skeleton</a> boilerplate. Skeleton<b
+            >i</b
+          >
+          was created in 2025 mostly for <b>i</b>ndustrial aplications which require
+          fast development, readability, touch control, responsive layout and light/dark
+          mode but not animations or fancy features. Skeletoni is free to use under the
+          <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.
+        </p>
+        <p>
+          Skeletoni CSS is single file with less than 1000 lines. For more complex but
+          still simple alternative see
+          <a href="https://picocss.com/docs/classless">Pico CSS</a>.
+        </p>
+      </div>
+      <hr />
+
+      <!-- Grid -->
+      <div id="grid">
+        <h2>The grid</h2>
+        <p>
+          The grid has <b> 12-columns on wide screen </b> and automatically changes to
+          <b>6-columns on smaller device</b> or window. This improves readability, but
+          12-columns grid can be preserved on smaller devices by deleting single section
+          of CSS code. On mobile screens, grid is deactivated entirely (each column
+          takes full width of screen).
+          <br />
+          Max width can be changed with one line of CSS, default is 1200px.
+          <br /><b>Try to resize window or rotate screen on your phone!</b>
+        </p>
+
+        <div class="example-grid docs-example">
+          <div class="row">
+            <div class="one columns">One</div>
+            <div class="eleven columns">Eleven</div>
+          </div>
+          <div class="row">
+            <div class="two columns">Two</div>
+            <div class="ten columns">Ten</div>
+          </div>
+          <div class="row">
+            <div class="three columns">Three</div>
+            <div class="nine columns">Nine</div>
+          </div>
+          <div class="row">
+            <div class="four columns">Four</div>
+            <div class="eight columns">Eight</div>
+          </div>
+          <div class="row">
+            <div class="five columns">Five</div>
+            <div class="seven columns">Seven</div>
+          </div>
+          <div class="row">
+            <div class="six columns">Six</div>
+            <div class="six columns">Six</div>
+          </div>
+          <div class="row">
+            <div class="seven columns">Seven</div>
+            <div class="five columns">Five</div>
+          </div>
+          <div class="row">
+            <div class="eight columns">Eight</div>
+            <div class="four columns">Four</div>
+          </div>
+          <div class="row">
+            <div class="nine columns">Nine</div>
+            <div class="three columns">Three</div>
+          </div>
+          <div class="row">
+            <div class="ten columns">Ten</div>
+            <div class="two columns">Two</div>
+          </div>
+          <div class="row">
+            <div class="eleven columns">Eleven</div>
+            <div class="one columns">One</div>
+          </div>
+          <div class="row">
+            <div class="twelve columns">Twelve</div>
+          </div>
+          <div class="row">
+            <div class="quarter-of columns">quarter-of</div>
+            <div class="three-quarters-of columns">three-quarters-of</div>
+          </div>
+          <div class="row">
+            <div class="third-of columns">third-of</div>
+            <div class="two-thirds-of columns">two-thirds-of</div>
+          </div>
+          <div class="row">
+            <div class="half-of columns">half-of</div>
+            <div class="two-quarters-of columns">half-of</div>
+          </div>
+          <div class="row">
+            <div class="all-of columns">all-of</div>
+          </div>
+          <div class="row">
+            <div class="one columns">one</div>
+            <div class="two columns">two</div>
+            <div class="quarter-of columns">quarter-of</div>
+            <div class="half-of columns">half-of</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-one eleven columns">offset-by-one eleven</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-two ten columns">offset-by-two ten</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-three nine columns">offset-by-three nine</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-four eight columns">offset-by-four eight</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-five seven columns">offset-by-five seven</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-six six columns">offset-by-six six</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-seven five columns">offset-by-seven five</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-eight four columns">
+              <span class="hide-on-narrow">offset-by-eight</span> four
+            </div>
+          </div>
+          <div class="row">
+            <div class="offset-by-nine three columns">
+              <span class="hide-on-narrow">offset-by-nine</span> three
+            </div>
+          </div>
+          <div class="row">
+            <div class="offset-by-ten two columns">two</div>
+          </div>
+          <div class="row">
+            <div class="offset-by-eleven one columns">one</div>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Colors -->
+      <div id="colors">
+        <h2>Colors</h2>
+        <p>
+          There are three main colour classes - primary, warning, success. Nine other
+          color classes have no specific meaning. Skeletoni automatically switches
+          between light and dark themes using browser/OS settings.
+        </p>
+        <div class="row example-grid-colors">
+          <div class="one column primary">primary</div>
+          <div class="one column warning">warning</div>
+          <div class="one column success">successs</div>
+          <div class="one column red">red</div>
+          <div class="one column orange">orange</div>
+          <div class="one column lime">lime</div>
+          <div class="one column green">green</div>
+          <div class="one column cyan">cyan</div>
+          <div class="one column blue">blue</div>
+          <div class="one column purple">purple</div>
+          <div class="one column brown">brown</div>
+          <div class="one column grey">grey</div>
+        </div>
+      </div>
+      <hr />
+      <!-- Typography -->
+      <div id="typography">
+        <h2>Typography</h2>
+        <div class="docs-example">
+          <div class="row">
+            <div class="six columns">
+              <p>
+                <strong>The default font</strong> is
+                <a href="http://www.google.com/fonts/specimen/Roboto">Roboto</a>
+                Text elements like <a href="#">anchors</a>, <strong>strong</strong>,
+                <em>emphasis</em>, <mark>mark</mark>, <samp>samp</samp> and
+                <u>underline</u> are styled by Skeletoni.
+              </p>
+            </div>
+            <div class="six columns">
+              <h1>
+                Heading<span class="heading-font-size"> <code>&lt;h1&gt;</code></span>
+              </h1>
+              <h2>
+                Heading<span class="heading-font-size"> <code>&lt;h2&gt;</code></span>
+              </h2>
+              <h3>
+                Heading<span class="heading-font-size"> <code>&lt;h3&gt;</code></span>
+              </h3>
+              <h4>
+                Heading<span class="heading-font-size"> <code>&lt;h4&gt;</code></span>
+              </h4>
+              <h5>
+                Heading<span class="heading-font-size"> <code>&lt;h5&gt;</code></span>
+              </h5>
+              <h6>
+                Heading<span class="heading-font-size"> <code>&lt;h6&gt;</code></span>
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Buttons -->
+      <div id="buttons">
+        <h2>Buttons</h2>
+        <p>
+          Button or input with <code>type="submit</code> or
+          <code>type="button"</code> or anchor (<code>&lt;a&gt;</code>) with
+          <code>class="button"</code> have the same appearance in Skeletoni. If
+          <code>class="button-primary"</code> is applied, then the text gets "primary"
+          color (default is blue).
+        </p>
+        <div class="docs-example">
+          <div>
+            <a class="button" href="#">Anchor button</a>
+            <button>Button element</button>
+            <input type="submit" value="submit input" />
+            <input type="button" value="button input" />
+          </div>
+          <div>
+            <a class="button button-primary" href="#">Anchor button</a>
+            <button class="button-primary">Button element</button>
+            <input class="button-primary" type="submit" value="submit input" />
+            <input class="button-primary" type="button" value="button input" />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- Forms -->
+      <div id="forms">
+        <h2>Forms</h2>
+        <p>
+          All inputs, select, and buttons are normalized for a common height so inputs
+          can be stacked or placed alongside each other. Input elements with built-in
+          validation change border color to warning if input is invalid (try to write
+          email without @).
+        </p>
+        <div class="docs-example docs-example-forms">
+          <form>
+            <div class="row">
+              <div class="six columns">
+                <label for="exampleEmailInput">Your email</label>
+                <input
+                  class="u-full-width"
+                  type="email"
+                  placeholder="test@mailbox.com"
+                  id="exampleEmailInput"
+                />
+              </div>
+              <div class="six columns">
+                <label for="exampleRecipientInput">Reason for contacting</label>
+                <select class="u-full-width" id="exampleRecipientInput">
+                  <option value="Option 1">Questions</option>
+                  <option value="Option 2">Admiration</option>
+                  <option value="Option 3">Can I get your number?</option>
+                </select>
+              </div>
+            </div>
+            <label for="exampleMessage">Message</label>
+            <textarea
+              class="u-full-width"
+              placeholder="Hi Dave &hellip;"
+              id="exampleMessage"
+            ></textarea>
+            <p>Please select your favorite Web language:</p>
+            <label
+              ><input type="radio" id="html" name="fav_language" value="HTML" /><span
+                class="label-body"
+                for="html"
+                >HTML</span
+              ></label
+            >
+            <label
+              ><input type="radio" id="css" name="fav_language" value="CSS" /><span
+                class="label-body"
+                for="css"
+                >CSS</span
+              ></label
+            >
+            <label class="example-send-yourself-copy">
+              <input type="checkbox" />
+              <span class="label-body">Send a copy to yourself</span>
+            </label>
+            <input class="button-primary" type="submit" value="Submit" />
+            <div class="row"></div>
+          </form>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Lists -->
+      <div id="lists">
+        <h2>Lists</h2>
+        <div class="row docs-example">
+          <div class="six columns">
+            <ul>
+              <li>Unordered lists have basic styles</li>
+              <li>
+                They use the circle list style
+                <ul>
+                  <li>Nested lists styled to feel right</li>
+                  <li>Can nest either type of list into the other</li>
+                </ul>
+              </li>
+              <li>One more list item</li>
+            </ul>
+          </div>
+          <div class="six columns">
+            <ol>
+              <li>Ordered lists also have basic styles</li>
+              <li>
+                They use the decimal list style
+                <ul>
+                  <li>Ordered and unordered can be nested</li>
+                  <li>Can nest either type of list into the other</li>
+                </ul>
+              </li>
+              <li>Last list item</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Code -->
+      <div id="code">
+        <h2>Code</h2>
+        <p>
+          Code styling is basic – anything inside &lt;code&gt; will appear like
+          <code>this</code>. For blocks of code, wrap a <code>&lt;code&gt;</code> with a
+          <code>&lt;pre&gt;</code>.
+        </p>
+        <div class="docs-example">
+          <pre><code>.some-class &#123;
+  background-color: red;
+  &#125;</code></pre>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Tables -->
+      <div id="tables">
+        <h2>Tables</h2>
+        <p>
+          Sample table with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code>.
+        </p>
+        <div>
+          <table class="twelve columns">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dave Gamache</td>
+                <td>26</td>
+                <td>Male</td>
+                <td>San Francisco</td>
+              </tr>
+              <tr>
+                <td>Dwayne Johnson</td>
+                <td>42</td>
+                <td>Male</td>
+                <td>Hayward</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Queries -->
+      <div id="queries">
+        <h2>Media queries</h2>
+        <p>
+          Skeletoni uses media queries to serve its scalable grid, but also has a list
+          of queries for convenience of styling your site across devices. The queries
+          are mobile-first, meaning they target <code>min-width</code>. Default size is
+          Mobile portrait (max 576px). Sizes for the queries are:
+        </p>
+        <div class="docs-example row">
+          <div class="six columns">
+            <ul>
+              <li><strong>Mobile landscape</strong>: min 576px</li>
+              <li><strong>Tablet portrait</strong>: min 768px</li>
+            </ul>
+          </div>
+          <div class="six columns">
+            <ul>
+              <li><strong>Tablet landscape</strong>: min 992px</li>
+              <li><strong>Desktop/notebook</strong>: min 1400px</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </div>
+    <footer class="container">
+      <div class="row">
+        <div class="offset-by-four third-of columns">
+          <img src="./skeletoni.svg" />
+        </div>
+        <div class="third-of columns hide-on-mobile">
+          <div style="position: absolute; bottom: 0; right: 10px; padding-bottom: 10px">
+            Skeletoni 2025.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

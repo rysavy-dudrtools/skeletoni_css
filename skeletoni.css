@@ -1,0 +1,986 @@
+/*
+* Skeletoni V0.1.0 (Skeleton Industrial)
+* Copyright 2024, Jindrich Rysavy
+* Free to use under the MIT license http://www.opensource.org/licenses/mit-license.php
+* BASED ON Skeleton V2.0.4 by Dave Gamache, see www.getskeleton.com
+* Skeletoni is not "Skeleton 2" but rather independent variation created
+* mostly for industrial aplications which require fast development, readability, 
+* touch control, responsive layout and light/dark mode but not animations or fancy features.
+* For more complex but still simple alternative see Pico CSS https://picocss.com/docs/classless
+*/
+
+/* Extra normalization
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* following rules are from modern-normalize v3.0.1 under the MIT License 
+* see https://github.com/sindresorhus/modern-normalize */
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 96%;
+  padding: 0;
+}
+
+@media (max-width: 576px) {
+  /* utility class which can be used for example to hide long text from buttons 
+  like <button><span class="hide-on-narrow">list of </span>users</button>*/
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+  .hide-on-tablet {
+    display: none;
+  }
+
+  /* Columns */
+  /* IMPORTANT: opinionated part which changes 12-columns grid to 6-columns grid
+  on narrow screens (mobiles in landscape mode, tablets in portrait mode)
+  This may create unexpected layouts. Delete following section to keep 12-columns grid.
+  */
+  .column,
+  .columns {
+    margin-left: 3%;
+  }
+
+  .one.column,
+  .one.columns,
+  .two.columns {
+    width: 13.666666665%;
+  }
+
+  .three.columns,
+  .quarter-of.columns,
+  .one-quarter-of.columns,
+  .four.columns,
+  .third-of.columns,
+  .one-third-of.columns {
+    width: 30.33333332%;
+  }
+
+  .five.columns,
+  .six.columns,
+  .half-of.columns,
+  .two-quarters-of.columns,
+  .seven.columns {
+    width: 47%;
+  }
+
+  .eight.columns,
+  .two-thirds-of.columns,
+  .nine.columns,
+  .three-quarters-of.columns {
+    width: 63.666666665%;
+  }
+
+  .ten.columns,
+  .eleven.columns {
+    width: 80.33333333%;
+  }
+
+  .twelve.columns,
+  .all-of.columns,
+  .four-quarters-of.columns {
+    width: 97%;
+  }
+
+  /* Offsets */
+
+  .offset-by-one.column,
+  .offset-by-one.columns,
+  .offset-by-two.columns {
+    margin-left: 19.666666665%;
+  }
+
+  .offset-by-three.columns,
+  .offset-by-quarter-of.columns,
+  .offset-by-one-quarter-of.columns,
+  .offset-by-four.columns,
+  .offset-by-third-of.columns,
+  .offset-by-one-third-of.columns {
+    margin-left: 36.33333332%;
+  }
+
+  .offset-by-five.columns,
+  .offset-by-six.columns,
+  .offset-by-half-of.columns,
+  .offset-by-two-quarters-of.columns,
+  .offset-by-seven.columns {
+    margin-left: 53%;
+  }
+
+  .offset-by-eight.columns,
+  .offset-by-two-thirds-of.columns,
+  .offset-by-nine.columns,
+  .offset-by-three-quarters-of.columns {
+    margin-left: 69.666666665%;
+  }
+
+  .offset-by-ten.columns,
+  .offset-by-eleven.columns {
+    margin-left: 86.33333333%;
+  }
+}
+
+/* For devices equal or larger than 576px */
+@media (min-width: 992px) {
+  .container {
+    width: 95%;
+  }
+
+  .column,
+  .columns {
+    margin-left: 3%;
+  }
+
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0;
+  }
+
+  /* Columns */
+  .one.column,
+  .one.columns {
+    width: 5.583333332%;
+  }
+
+  .two.columns {
+    width: 14.166666665%;
+  }
+
+  .three.columns,
+  .quarter-of.columns,
+  .one-quarter-of.columns {
+    width: 22.75%;
+  }
+
+  .four.columns,
+  .third-of.columns,
+  .one-third-of.columns {
+    width: 31.333333332%;
+  }
+
+  .five.columns {
+    width: 39.916666665%;
+  }
+
+  .six.columns,
+  .half-of.columns,
+  .two-quarters-of.columns {
+    width: 48.5%;
+  }
+
+  .seven.columns {
+    width: 57.08333332%;
+  }
+
+  .eight.columns,
+  .two-thirds-of.columns {
+    width: 65.66666665%;
+  }
+
+  .nine.columns,
+  .three-quarters-of.columns {
+    width: 74.25%;
+  }
+
+  .ten.columns {
+    width: 82.833333332%;
+  }
+
+  .eleven.columns {
+    width: 91.416666665%;
+  }
+
+  .twelve.columns,
+  .all-of.columns,
+  .four-quarters-of.columns {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns {
+    margin-left: 8.583333333%;
+  }
+
+  .offset-by-two.columns {
+    margin-left: 17.166666667%;
+  }
+
+  .offset-by-three.columns,
+  .offset-by-quarter-of.columns,
+  .offset-by-one-quarter-of.columns {
+    margin-left: 25.75%;
+  }
+
+  .offset-by-four.columns,
+  .offset-by-third-of.columns,
+  .offset-by-one-third-of.columns {
+    margin-left: 34.333333333%;
+  }
+
+  .offset-by-five.columns {
+    margin-left: 43.3333333333%;
+  }
+
+  .offset-by-six.columns,
+  .offset-by-half-of.columns,
+  .offset-by-two-quarters-of.columns {
+    margin-left: 51.5%;
+  }
+
+  .offset-by-seven.columns {
+    margin-left: 59.583333331%;
+  }
+
+  .offset-by-eight.columns,
+  .offset-by-two-thirds-of.columns {
+    margin-left: 68.3333333333%;
+  }
+
+  .offset-by-nine.columns,
+  .offset-by-three-quarters-of.columns {
+    margin-left: 77.25%;
+  }
+
+  .offset-by-ten.columns {
+    margin-left: 85.833333333%;
+  }
+
+  .offset-by-eleven.columns {
+    margin-left: 94.416666667%;
+  }
+}
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  /* automatically switch between light and dark themes using browser/OS settings */
+  color-scheme: light dark;
+
+  --lred: #c62828;
+  /* light (lred) and dark (dred) color CSS variables */
+  --dred: #e57373;
+  --lorange: #ef6c00;
+  --dorange: #ffb74d;
+  --llime: #827717;
+  --dlime: #dce775;
+  --lgreen: #2e7d32;
+  --dgreen: #81c784;
+  --lcyan: #00838f;
+  --dcyan: #4dd0e1;
+  --lblue: #1565c0;
+  --dblue: #64b5f6;
+  --lpurple: #6a1b9a;
+  --dpurple: #ba68c8;
+  --lbrown: #4e342e;
+  --dbrown: #a1887f;
+  --lgrey: #37474f;
+  --dgrey: #90a4ae;
+
+  --lbg: #fff;
+  /* background for light scheme */
+  --lfg: #222;
+  /* foreground for light scheme */
+  --ldisabled: #444;
+  --lprimary: var(--lblue);
+  /* background of primary button for dark scheme */
+  --lfocus: #2196f3;
+  /* borders of focused button, links, background of selection */
+  --lcode: color-mix(in srgb, var(--lbg), #000 10%);
+  /* background of pre and code */
+
+  --dbg: #000;
+  /* background for dark scheme*/
+  --dfg: #d9d9d9;
+  /*foreground for dark scheme*/
+  --ddisabled: #888;
+  --dprimary: var(--dblue);
+  --dfocus: #bbdefb;
+  --dcode: color-mix(in srgb, var(--dbg), #fff 20%);
+}
+
+html {
+  font-size: 100%;
+  tab-size: 4;
+}
+
+/* Color classes */
+.primary {
+  color: light-dark(var(--lprimary), var(--dprimary));
+}
+
+.warning {
+  color: light-dark(var(--lred), var(--dred));
+}
+
+.success {
+  color: light-dark(var(--lgreen), var(--dgreen));
+}
+
+.red {
+  color: light-dark(var(--lred), var(--dred));
+}
+
+.orange {
+  color: light-dark(var(--lorange), var(--dorange));
+}
+
+.lime,
+.yellow {
+  /*this is actually lime, yellow would have insufficient contrast*/
+  color: light-dark(var(--llime), var(--dlime));
+}
+
+.green {
+  color: light-dark(var(--lgreen), var(--dgreen));
+}
+
+.cyan {
+  color: light-dark(var(--lcyan), var(--dcyan));
+}
+
+.blue {
+  color: light-dark(var(--lblue), var(--dblue));
+}
+
+.purple {
+  color: light-dark(var(--lpurple), var(--dpurple));
+}
+
+.brown {
+  color: light-dark(var(--lbrown), var(--dbrown));
+}
+
+.gray,
+.grey {
+  color: light-dark(var(--lgrey), var(--dgrey));
+}
+
+body {
+  background-color: light-dark(var(--lbg), var(--dbg));
+  color: light-dark(var(--lfg), var(--dfg));
+}
+
+::selection,
+mark {
+  color: light-dark(var(--lbg), var(--dbg));
+  background: light-dark(var(--lfocus), var(--dfocus));
+}
+
+dialog {
+  color: light-dark(var(--lfg), var(--dfg));
+  background-color: light-dark(var(--lcode), var(--dcode));
+  border-color: light-dark(var(--lfg), var(--dfg));
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid;
+}
+
+dialog form[method="dialog"] {
+  margin-bottom: 0px;
+  float: right;
+}
+
+a {
+  color: light-dark(var(--lprimary), var(--dprimary));
+}
+
+a:hover {
+  color: light-dark(var(--lfocus), var(--dfocus));
+}
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  font-size: 1.1em;
+  line-height: 1.6;
+  font-weight: normal;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: "Roboto Mono", "Cascadia Mono", "Segoe UI Mono", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 3.8rem;
+  line-height: 1.2;
+  letter-spacing: -0.1rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+  line-height: 1.25;
+  letter-spacing: -0.1rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 2.2rem;
+  line-height: 1.35;
+}
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+p {
+  margin-top: 0;
+}
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+progress {
+  accent-color: light-dark(var(--lprimary), var(--dprimary));
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled,
+input[type="range"]:disabled {
+  accent-color: light-dark(var(--ldisabled), var(--ddisabled));
+  pointer-events: none;
+}
+
+label:has(> input[type="checkbox"]),
+label:has(> input[type="radio"]) {
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+label:has(> input[type="checkbox"]):hover,
+label:has(> input[type="radio"]):hover {
+  border-color: light-dark(var(--lfocus), var(--dfocus));
+}
+
+label:has(> input[type="checkbox"]:disabled),
+label:has(> input[type="radio"]:disabled) {
+  color: light-dark(var(--ldisabled), var(--ddisabled));
+  pointer-events: none;
+  border-bottom: 1px solid transparent;
+}
+
+button,
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 20px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+  color: light-dark(var(--lfg), var(--dfg));
+  border: 1px solid;
+  border-color: light-dark(var(--lfg), var(--dfg));
+  background-color: light-dark(var(--lbg), var(--dbg));
+  font-size: 0.8rem;
+}
+
+details summary {
+  height: 38px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  color: light-dark(var(--lfg), var(--dfg));
+  font-size: 0.8rem;
+  border-bottom: 1px solid;
+  border-color: transparent;
+}
+
+details summary:hover {
+  border-color: light-dark(var(--lfocus), var(--dfocus));
+}
+
+button.button-primary,
+.button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: light-dark(var(--lprimary), var(--dprimary));
+  /*color: light-dark(var(--lfg), var(--dfg));*/
+  border: 1px solid;
+  border-color: light-dark(var(--lfg), var(--dfg));
+}
+
+button.button-primary:hover,
+.button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+button.button-primary:focus,
+.button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus,
+button:hover,
+.button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:focus,
+.button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  text-decoration: underline;
+  color: light-dark(var(--lfocus), var(--dfocus));
+  border-color: light-dark(var(--lfocus), var(--dfocus));
+  outline: 0;
+}
+
+button:disabled,
+button.button:disabled,
+.button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+input[type="button"]:disabled {
+  border: 1px solid;
+  border-color: light-dark(var(--ldisabled), var(--ddisabled));
+  color: light-dark(var(--ldisabled), var(--ddisabled));
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+button.button-primary:disabled,
+.button.button-primary:disabled,
+input[type="submit"].button-primary:disabled,
+input[type="reset"].button-primary:disabled,
+input[type="button"].button-primary:disabled {
+  border-color: light-dark(var(--ldisabled), var(--ddisabled));
+  color: light-dark(var(--ldisabled), var(--ddisabled));
+  background-color: light-dark(var(--lprimary), var(--dprimary));
+  pointer-events: none;
+}
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  /*background-color: #fff;*/
+  /*border: 1px solid #d1d1d1;*/
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  background-color: light-dark(var(--lbg), var(--dbg));
+  color: light-dark(var(--lfg), var(--dfg));
+  border: 1px solid;
+  border-color: light-dark(var(--lfg), var(--dfg));
+  font-size: 1rem;
+}
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid;
+  border-color: light-dark(var(--lfocus), var(--dfocus));
+}
+
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid;
+  border-color: light-dark(var(--lfocus), var(--dfocus));
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+fieldset {
+  padding: 12px 15px;
+  border: 1px solid;
+  border: 0px;
+  background-color: light-dark(var(--lcode), var(--dcode));
+  /*border-color: light-dark(var(--lfg), var(--dfg));*/
+}
+
+fieldset > legend {
+  margin-left: -5px;
+  padding: 0px;
+  padding-inline: 5px;
+  background-color: light-dark(var(--lbg), var(--dbg));
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  border: 1px solid;
+  border-color: light-dark(var(--lfocus), var(--dfocus));
+}
+
+label > .label-body {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
+input[type="email"]::placeholder,
+input[type="number"]::placeholder,
+input[type="search"]::placeholder,
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="url"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: light-dark(var(--ldisabled), var(--ddisabled));
+}
+
+input[type="email"]:invalid,
+input[type="number"]:invalid,
+input[type="search"]:invalid,
+input[type="text"]:invalid,
+/* type "tel" is not validated automatically, see
+ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel */
+input[type="tel"]:invalid,
+input[type="url"]:invalid,
+input[type="password"]:invalid {
+  border-color: light-dark(var(--lred), var(--dred));
+}
+
+input[type="email"]:disabled,
+input[type="number"]:disabled,
+input[type="search"]:disabled,
+input[type="text"]:disabled,
+input[type="tel"]:disabled,
+input[type="url"]:disabled,
+input[type="password"]:disabled,
+textarea:disabled,
+select:disabled {
+  border-color: light-dark(var(--ldisabled), var(--ddisabled));
+  color: light-dark(var(--ldisabled), var(--ddisabled));
+  background-color: light-dark(var(--lbg), var(--dbg));
+  pointer-events: none;
+}
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style: circle inside;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+ol,
+ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code,
+pre,
+kbd,
+samp {
+  color: light-dark(var(--lgf), var(--dfg));
+  background-color: light-dark(var(--lcode), var(--dcode));
+  padding: 2px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem;
+  white-space: pre;
+  overflow: auto;
+}
+
+/* Images
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+figure,
+figcaption,
+img {
+  font-style: italic;
+  max-width: 100%;
+}
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th {
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid;
+  border-color: light-dark(var(--lgf), var(--dfg));
+  overflow: hidden;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+table {
+  overflow-x: auto;
+  border: 0px;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  float: none;
+}
+
+table.column,
+table.columns {
+  width: 100%;
+  overflow: hidden;
+  float: none;
+}
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button,
+.button,
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem;
+}
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem;
+}
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid;
+  border-color: light-dark(var(--lgf), var(--dfg));
+}
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Most mobiles in landscape mode (also point when grid becomes active) */
+@media (min-width: 576px) {
+}
+
+/* Iphone 14 Pro Max/Samsung S20 Ultra in landscape mode, tablets in portrait mode */
+@media (min-width: 768px) {
+}
+
+/* Tablets in landscape mode, older notebooks */
+@media (min-width: 992px) {
+}
+
+/* Desktop PC or modern notebook */
+@media (min-width: 1400px) {
+}
