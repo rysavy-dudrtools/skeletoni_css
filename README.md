@@ -18,7 +18,3 @@ Download skeletoni.css and test.html to see all it does. Below are some screensh
 Skeletoni color palette
 
 ![colors-mobile](./img/colors-mobile.png "Skeletoni color palette")
-
-Forms styled by Skeletoni
-
-![forms-mobile](./img/forms-mobile.png "Forms styled by Skeletoni")
