@@ -457,7 +457,7 @@ body {
   font-size: 1.1em;
   line-height: 1.6;
   font-weight: normal;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Roboto", "Noto", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 code,
@@ -956,6 +956,13 @@ hr {
   border-width: 0;
   border-top: 1px solid;
   border-color: light-dark(var(--lgf), var(--dfg));
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
 
 /* Clearing
