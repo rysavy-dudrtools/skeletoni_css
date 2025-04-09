@@ -14,9 +14,37 @@
 
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="./normalize.min.css" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/roboto" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/roboto-mono" />
+    <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./skeletoni.css" />
-    <link rel="stylesheet" href="./custom.css" />
+    <style>
+      body {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .example-grid-colors .column {
+        text-align: center;
+        border-left: 1px solid;
+        padding-left: 4px;
+      }
+      .example-grid .column,
+      .example-grid .columns {
+        background-color: #a0a0a030;
+        font-size: 0.9em;
+        text-align: center;
+        text-transform: uppercase;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+      }
+      .example-grid .row {
+        margin-bottom: 0px;
+      }
+    </style>
   </head>
 
   <body class="code-snippets-visible">
@@ -24,20 +52,17 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
       <section class="header">
-        <h1 class="title">A dead simple, responsive CSS.</h1>
-        <a
-          class="button button-primary"
-          href=""
-          onClick="_gaq.push(['_trackEvent', 'skeletoni', 'download'])"
-          style="
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: fit-content;
-          "
-          >Download Skeletoni</a
-        >
+        <h1 class="title center">A dead simple, responsive CSS.</h1>
+        <div class="row">
+          <a
+            class="button button-primary center"
+            href=""
+            onClick="_gaq.push(['_trackEvent', 'skeletoni', 'download'])"
+            >Download Skeletoni</a
+          >
+        </div>
       </section>
+      <hr />
 
       <!-- Skeletoni info -->
       <div id="grid">
@@ -215,7 +240,7 @@
             <div class="six columns">
               <p>
                 <strong>The default font</strong> is
-                <a href="http://www.google.com/fonts/specimen/Roboto">Roboto</a>
+                <a href="https://fonts.google.com/specimen/Roboto">Roboto</a>
                 Text elements like <a href="#">anchors</a>, <strong>strong</strong>,
                 <em>emphasis</em>, <mark>mark</mark>, <samp>samp</samp> and
                 <u>underline</u> are styled by Skeletoni.
