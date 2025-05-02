@@ -5,7 +5,7 @@ mode but not animations or fancy features.
 
 Skeletoni CSS is single file with less than 1000 lines. For more complex but still simple alternative see [Pico CSS](https://picocss.com/docs/classless).
 
-Download skeletoni.css and test.html to see all it does. Below are some screenshots from test.html:
+**[See test webpage here](https://rysavy-dudrtools.github.io/skeletoni_css/test.html)** or download skeletoni.css and test.html from [Github](https://github.com/rysavy-dudrtools/skeletoni_css/tree/main) to see all it does. Below are some screenshots from test.html:
 
 12-column Skeletoni grid on desktop
 
