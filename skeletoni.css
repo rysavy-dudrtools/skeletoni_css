@@ -1,6 +1,6 @@
 /*
-* Skeletoni V0.1.0 (Skeleton Industrial)
-* Copyright 2024, Jindrich Rysavy
+* Skeletoni V0.2.0 (Skeleton Industrial) 
+* Copyright 2024, Jindrich Rysavy, see https://github.com/rysavy-dudrtools/skeletoni_css
 * Free to use under the MIT license http://www.opensource.org/licenses/mit-license.php
 * BASED ON Skeleton V2.0.4 by Dave Gamache, see www.getskeleton.com
 * Skeletoni is not "Skeleton 2" but rather independent variation created
@@ -9,25 +9,24 @@
 * For more complex but still simple alternative see Pico CSS https://picocss.com/docs/classless
 */
 
-/* Extra normalization
+/* Normalization rules from modern-normalize v3.0.1 (under the MIT License)
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/* following rules are from modern-normalize v3.0.1 under the MIT License 
-* see https://github.com/sindresorhus/modern-normalize */
+/* see https://github.com/sindresorhus/modern-normalize */
 
 *,
-::after,
-::before {
+::before,
+::after {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
 }
 
 sub,
 sup {
-  font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -52,8 +51,42 @@ textarea {
   margin: 0;
 }
 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
 legend {
   padding: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+summary {
+  display: list-item;
 }
 
 /* Grid
@@ -81,7 +114,7 @@ legend {
 
 @media (max-width: 576px) {
   /* utility class which can be used for example to hide long text from buttons 
-  like <button><span class="hide-on-narrow">list of </span>users</button>*/
+  like <button><span class="hide-on-mobile">list of </span>users</button>*/
   .hide-on-mobile {
     display: none;
   }
@@ -421,6 +454,7 @@ html {
 body {
   background-color: light-dark(var(--lbg), var(--dbg));
   color: light-dark(var(--lfg), var(--dfg));
+  margin: 0;
 }
 
 ::selection,
@@ -445,19 +479,29 @@ dialog form[method="dialog"] {
 
 a {
   color: light-dark(var(--lprimary), var(--dprimary));
+  text-decoration: none;
 }
 
 a:hover {
   color: light-dark(var(--lfocus), var(--dfocus));
+  text-decoration: underline;
 }
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+html,
 body {
+  font-family: "Roboto", "Noto", "Helvetica Neue", Helvetica, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 1.1em;
   line-height: 1.6;
-  font-weight: normal;
-  font-family: "Roboto", "Noto", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+b,
+strong,
+th {
+  font-weight: 700;
 }
 
 code,
@@ -465,6 +509,7 @@ pre,
 kbd,
 samp {
   font-family: "Roboto Mono", "Cascadia Mono", "Segoe UI Mono", monospace;
+  font-size: 1.1em;
 }
 
 h1,
@@ -514,7 +559,13 @@ p {
   margin-top: 0;
 }
 
-/* Buttons
+small,
+sup,
+sup {
+  font-size: 0.75rem;
+}
+
+/* Inputs and Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 input[type="checkbox"],
 input[type="radio"],
@@ -555,8 +606,9 @@ label:has(> input[type="radio"]:disabled) {
   border-bottom: 1px solid transparent;
 }
 
-button,
 .button,
+.button-primary,
+button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
@@ -564,7 +616,7 @@ input[type="button"] {
   height: 38px;
   padding: 0 20px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 38px;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -582,7 +634,7 @@ input[type="button"] {
 
 details summary {
   height: 38px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 38px;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -598,34 +650,21 @@ details summary:hover {
   border-color: light-dark(var(--lfocus), var(--dfocus));
 }
 
-button.button-primary,
-.button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
+.button-primary {
   color: light-dark(var(--lprimary), var(--dprimary));
   /*color: light-dark(var(--lfg), var(--dfg));*/
-  border: 1px solid;
   border-color: light-dark(var(--lfg), var(--dfg));
 }
 
-button.button-primary:hover,
-.button.button-primary:hover,
-input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover,
-button.button-primary:focus,
-.button.button-primary:focus,
-input[type="submit"].button-primary:focus,
-input[type="reset"].button-primary:focus,
-input[type="button"].button-primary:focus,
-button:hover,
 .button:hover,
+.button-primary:hover,
+button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
-button:focus,
 .button:focus,
+.button-primary:focus,
+button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
@@ -635,9 +674,9 @@ input[type="button"]:focus {
   outline: 0;
 }
 
-button:disabled,
-button.button:disabled,
 .button:disabled,
+.button-primary:disabled,
+button:disabled,
 input[type="submit"]:disabled,
 input[type="reset"]:disabled,
 input[type="button"]:disabled {
@@ -648,19 +687,13 @@ input[type="button"]:disabled {
   cursor: not-allowed;
 }
 
-button.button-primary:disabled,
-.button.button-primary:disabled,
-input[type="submit"].button-primary:disabled,
-input[type="reset"].button-primary:disabled,
-input[type="button"].button-primary:disabled {
-  border-color: light-dark(var(--ldisabled), var(--ddisabled));
-  color: light-dark(var(--ldisabled), var(--ddisabled));
+.button-primary:disabled {
   background-color: light-dark(var(--lprimary), var(--dprimary));
-  pointer-events: none;
 }
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -676,6 +709,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 textarea,
 select {
+  /* Removes awkward default styles on some inputs for iOS */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   height: 38px;
   padding: 6px 10px;
   /* The 6px vertically centers text on FF, ignored by Webkit */
@@ -689,45 +726,6 @@ select {
   border: 1px solid;
   border-color: light-dark(var(--lfg), var(--dfg));
   font-size: 1rem;
-}
-
-/* Removes awkward default styles on some inputs for iOS */
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-select:focus {
-  border: 1px solid;
-  border-color: light-dark(var(--lfocus), var(--dfocus));
-}
-
-textarea {
-  min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 input[type="email"]:focus,
@@ -750,11 +748,17 @@ select:focus {
   outline: 0;
 }
 
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 label,
 legend {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 fieldset {
@@ -776,12 +780,7 @@ input[type="checkbox"],
 input[type="radio"] {
   border: 1px solid;
   border-color: light-dark(var(--lfocus), var(--dfocus));
-}
-
-label > .label-body {
-  display: inline-block;
-  margin-left: 0.5rem;
-  font-weight: normal;
+  margin-right: 0.5rem;
 }
 
 input[type="email"]::placeholder,
@@ -861,7 +860,7 @@ samp {
   background-color: light-dark(var(--lcode), var(--dcode));
   padding: 2px;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 mark {
@@ -887,10 +886,6 @@ img {
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-th {
-  font-weight: bold;
-}
-
 th,
 td {
   padding: 12px 15px;
@@ -913,6 +908,7 @@ td:last-child {
 table {
   overflow-x: auto;
   border: 0px;
+  border-color: light-dark(var(--lgf), var(--dfg));
   border-collapse: collapse;
   box-sizing: border-box;
   float: none;
@@ -929,6 +925,7 @@ table.columns {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button,
+.button-primary,
 input,
 textarea,
 select,
@@ -967,7 +964,6 @@ hr {
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 /* Self Clearing Goodness */
 .container:after,
 .row:after,
@@ -979,7 +975,6 @@ hr {
 
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 /* Most mobiles in landscape mode (also point when grid becomes active) */
 @media (min-width: 576px) {
 }

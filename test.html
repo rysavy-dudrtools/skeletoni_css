@@ -16,7 +16,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/roboto" />
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/roboto-mono" />
-    <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./skeletoni.css" />
     <style>
       body {
@@ -289,7 +288,7 @@
             <input type="button" value="button input" />
           </div>
           <div>
-            <a class="button button-primary" href="#buttons">Anchor button</a>
+            <a class="button-primary" href="#buttons">Anchor button</a>
             <button class="button-primary">Button element</button>
             <input class="button-primary" type="submit" value="submit input" />
             <input class="button-primary" type="button" value="button input" />
@@ -312,7 +311,6 @@
               <div class="six columns">
                 <label for="exampleEmailInput">Your email</label>
                 <input
-                  class="u-full-width"
                   type="email"
                   placeholder="test@mailbox.com"
                   id="exampleEmailInput"
@@ -320,7 +318,7 @@
               </div>
               <div class="six columns">
                 <label for="exampleRecipientInput">Reason for contacting</label>
-                <select class="u-full-width" id="exampleRecipientInput">
+                <select id="exampleRecipientInput">
                   <option value="Option 1">Questions</option>
                   <option value="Option 2">Admiration</option>
                   <option value="Option 3">Can I get your number?</option>
@@ -328,29 +326,23 @@
               </div>
             </div>
             <label for="exampleMessage">Message</label>
-            <textarea
-              class="u-full-width"
-              placeholder="Hi Dave &hellip;"
-              id="exampleMessage"
-            ></textarea>
+            <textarea placeholder="Hi Dave &hellip;" id="exampleMessage"></textarea>
             <p>Please select your favorite Web language:</p>
             <label
               ><input type="radio" id="html" name="fav_language" value="HTML" /><span
-                class="label-body"
                 for="html"
                 >HTML</span
               ></label
             >
             <label
               ><input type="radio" id="css" name="fav_language" value="CSS" /><span
-                class="label-body"
                 for="css"
                 >CSS</span
               ></label
             >
             <label class="example-send-yourself-copy">
               <input type="checkbox" />
-              <span class="label-body">Send a copy to yourself</span>
+              <span>Send a copy to yourself</span>
             </label>
             <input class="button-primary" type="submit" value="Submit" />
             <div class="row"></div>
