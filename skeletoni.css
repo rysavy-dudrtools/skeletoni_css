@@ -107,16 +107,15 @@ summary {
   box-sizing: border-box;
 }
 
-.container {
-  width: 96%;
-  padding: 0;
-}
-
 @media (max-width: 576px) {
   /* utility class which can be used for example to hide long text from buttons 
   like <button><span class="hide-on-mobile">list of </span>users</button>*/
   .hide-on-mobile {
     display: none;
+  }
+  .container {
+    width: 96%;
+    padding: 0;
   }
 }
 
@@ -965,9 +964,7 @@ hr {
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Self Clearing Goodness */
-.container:after,
-.row:after,
-.u-cf {
+.container:after {
   content: "";
   display: table;
   clear: both;
