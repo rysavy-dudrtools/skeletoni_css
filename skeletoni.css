@@ -492,8 +492,8 @@ a:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 html,
 body {
-  font-family: "Roboto", "Noto", "Helvetica Neue", Helvetica, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Roboto", "Noto", "Helvetica Neue", Helvetica, sans-serif, "Noto Emoji",
+    "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 1.1em;
   line-height: 1.6;
   font-weight: 400;
