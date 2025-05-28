@@ -37,10 +37,10 @@
         height: 30px;
         line-height: 30px;
         margin-bottom: 0.75rem;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 0.1rem;
       }
-      .example-grid .row {
+      .example-grid > div {
         margin-bottom: 0px;
       }
     </style>
@@ -122,131 +122,131 @@
           Max width can be changed with one line of CSS, default is 1200px.
           <br /><b>Try to resize window or rotate screen on your phone.</b> Note that in
           six-columns grid some columns are wider (<code>one</code> is as wide as
-          <code>two</code>) which can break row if there are more than two columns in
-          row.
+          <code>two</code>) which can break the row if it contains more than two
+          columns.
         </p>
 
         <div class="example-grid container docs-example">
-          <div class="row">
+          <div class="container">
             <div class="one columns">One</div>
             <div class="eleven columns">Eleven</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="two columns">Two</div>
             <div class="ten columns">Ten</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="three columns">Three</div>
             <div class="nine columns">Nine</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="four columns">Four</div>
             <div class="eight columns">Eight</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="five columns">Five</div>
             <div class="seven columns">Seven</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="six columns">Six</div>
             <div class="six columns">Six</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="seven columns">Seven</div>
             <div class="five columns">Five</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="eight columns">Eight</div>
             <div class="four columns">Four</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="nine columns">Nine</div>
             <div class="three columns">Three</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="ten columns">Ten</div>
             <div class="two columns">Two</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="eleven columns">Eleven</div>
             <div class="one columns">One</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="twelve columns">Twelve</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="quarter-of columns">quarter-of</div>
             <div class="three-quarters-of columns">three-quarters-of</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="third-of columns">third-of</div>
             <div class="two-thirds-of columns">two-thirds-of</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="half-of columns">half-of</div>
             <div class="two-quarters-of columns">half-of</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="all-of columns">all-of</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="third-of columns">third-of</div>
             <div class="third-of columns">third-of</div>
             <div class="third-of columns">third-of</div>
           </div>
-          <div class="row">
-            <div class="quarter-of columns">quareter-of</div>
+          <div class="container">
             <div class="quarter-of columns">quarter-of</div>
-            <div class="quarter-of columns">quareter-of</div>
+            <div class="quarter-of columns">quarter-of</div>
+            <div class="quarter-of columns">quarter-of</div>
             <div class="quarter-of columns">quarter-of</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="one columns">one</div>
             <div class="two columns">two</div>
             <div class="quarter-of columns">quarter-of</div>
             <div class="half-of columns">half-of</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-one eleven columns">offset-by-one eleven</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-two ten columns">offset-by-two ten</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-three nine columns">offset-by-three nine</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-four eight columns">offset-by-four eight</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-five seven columns">offset-by-five seven</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-six six columns">offset-by-six six</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-seven five columns">offset-by-seven five</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-eight four columns">
               <span class="hide-on-narrow">offset-by-eight</span> four
             </div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-nine three columns">
               <span class="hide-on-narrow">offset-by-nine</span> three
             </div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-ten two columns">...</div>
           </div>
-          <div class="row">
+          <div class="container">
             <div class="offset-by-eleven one columns">...</div>
           </div>
         </div>
       </div>
       <p>
-        Grid is constructed by custom classes: <code>container</code>, <code>row</code>,
+        Grid is constructed by custom classes: <code>container</code>,
         <code>column</code> or <code>columns</code> (they work the same) and classes
         specifying column width like <code>one</code>, <code>two</code>,
         <code>three</code> or <code>quarter-of</code>, <code>four</code> or
@@ -497,7 +497,7 @@
           are mobile-first, meaning they target <code>min-width</code>. Default size is
           Mobile portrait (max 576px). Sizes for the queries are:
         </p>
-        <div class="docs-example row">
+        <div class="docs-example container">
           <div class="six columns">
             <ul>
               <li><strong>Mobile landscape</strong>: min 576px</li>
