@@ -83,26 +83,27 @@
             >the most popular</a
           >
           "classless" CSS framework, but does not seem to be developed anymore and lacks
-          some features. Skeletoni adds style for all inputs (date, datetime, ...),
-          updates font to current "default" (Roboto), uses modern normalization rules
-          and reduces number of custom classes.
+          some features. Skeletoni adds style for all inputs (date, datetime, ...), uses
+          current "default" font (Roboto), includes modern normalization rules and
+          reduces number of custom classes to minimum.
         </p>
         <p>
           Skeletoni is primarily designed for industries where ease of use and speed of
-          development are prioritized. For example, it has automatic light/dark mode
+          development are more important than design. It has automatic light/dark mode
           where background is either white to improve readability outside or black to
-          prevent blinding by interior machine terminals. This also increases contrast
-          but colors can be easily changed for more pleasant design.
+          prevent blinding by interior machine terminals. Text is not gray but either
+          black or white for contrast. However, colors are specified by CSS variables so
+          they can be quickly modified.
         </p>
         <p>
-          There are some opinionated parts - mainly automatic grid reflow for smaller
-          screens (tablets, terminals).
+          Skeletoni uses custom classes only to specify grid layout, colors and button
+          appearance. There are only few opinionated parts - mainly automatic grid
+          reflow for smaller screens like tablets.
         </p>
+        <p></p>
         <p>
-          Skeletoni uses minimum of custom classes, only to specify grid, color, button
-        </p>
-        <p>
-          For more complex but still simple (optionally classless) alternative see
+          That's it. For more complex but still simple (optionally classless)
+          alternative see
           <a href="https://picocss.com/docs/classless">Pico CSS</a>.
         </p>
       </div>
@@ -119,10 +120,13 @@
           takes full width of screen).
           <br />
           Max width can be changed with one line of CSS, default is 1200px.
-          <br /><b>Try to resize window or rotate screen on your phone!</b>
+          <br /><b>Try to resize window or rotate screen on your phone.</b> Note that in
+          six-columns grid some columns are wider (<code>one</code> is as wide as
+          <code>two</code>) which can break row if there are more than two columns in
+          row.
         </p>
 
-        <div class="example-grid docs-example">
+        <div class="example-grid container docs-example">
           <div class="row">
             <div class="one columns">One</div>
             <div class="eleven columns">Eleven</div>
@@ -223,10 +227,10 @@
             </div>
           </div>
           <div class="row">
-            <div class="offset-by-ten two columns">two</div>
+            <div class="offset-by-ten two columns">...</div>
           </div>
           <div class="row">
-            <div class="offset-by-eleven one columns">one</div>
+            <div class="offset-by-eleven one columns">...</div>
           </div>
         </div>
       </div>
