@@ -1,5 +1,5 @@
 /*
-* Skeletoni V0.3.0 (Skeleton Industrial) 
+* Skeletoni V0.3.1 (Skeleton Industrial) 
 * Copyright 2024, Jindrich Rysavy, see https://github.com/rysavy-dudrtools/skeletoni_css
 * Free to use under the MIT license http://www.opensource.org/licenses/mit-license.php
 * BASED ON Skeleton V2.0.4 by Dave Gamache, see www.getskeleton.com
@@ -651,7 +651,10 @@ details summary:hover {
   border-color: light-dark(var(--lfocus), var(--dfocus));
 }
 
-.button-primary {
+.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
   color: light-dark(var(--lprimary), var(--dprimary));
   /*color: light-dark(var(--lfg), var(--dfg));*/
   border-color: light-dark(var(--lfg), var(--dfg));
@@ -686,10 +689,6 @@ input[type="button"]:disabled {
   color: light-dark(var(--ldisabled), var(--ddisabled));
   pointer-events: none;
   cursor: not-allowed;
-}
-
-.button-primary:disabled {
-  background-color: light-dark(var(--lprimary), var(--dprimary));
 }
 
 /* Forms
