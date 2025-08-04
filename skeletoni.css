@@ -1,5 +1,5 @@
 /*
-* Skeletoni V0.3.1 (Skeleton Industrial) 
+* Skeletoni V0.3.2 (Skeleton Industrial) 
 * Copyright 2024, Jindrich Rysavy, see https://github.com/rysavy-dudrtools/skeletoni_css
 * Free to use under the MIT license http://www.opensource.org/licenses/mit-license.php
 * BASED ON Skeleton V2.0.4 by Dave Gamache, see www.getskeleton.com
@@ -33,11 +33,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -0.25rem;
 }
 
 sup {
-  top: -0.5em;
+  top: -0.5rem;
 }
 
 button,
@@ -494,7 +494,7 @@ html,
 body {
   font-family: "Roboto", "Noto", "Helvetica Neue", Helvetica, sans-serif, "Noto Emoji",
     "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 1.1em;
+  font-size: 1.1rem;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -510,7 +510,8 @@ pre,
 kbd,
 samp {
   font-family: "Roboto Mono", "Cascadia Mono", "Segoe UI Mono", monospace;
-  font-size: 1.1em;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 h1,
@@ -859,8 +860,6 @@ samp {
   color: light-dark(var(--lgf), var(--dfg));
   background-color: light-dark(var(--lcode), var(--dcode));
   padding: 2px;
-  font-size: 1em;
-  font-weight: 700;
 }
 
 mark {
@@ -869,7 +868,7 @@ mark {
 
 pre > code {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem;
   white-space: pre;
   overflow: auto;
 }
@@ -964,18 +963,19 @@ hr {
 
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Most mobiles in landscape mode (also point when grid becomes active) */
+/* Less than 576px is default and applies to most mobile phones in portrait mode*/
+/* This media query applies to most mobiles in landscape mode (also grid becomes active) */
 @media (min-width: 576px) {
 }
 
-/* Iphone 15 Pro/Samsung S20 Ultra in landscape mode, tablets in portrait mode */
+/* Big mobiles in landscape (Iphone 15 Pro/Samsung S20 Ultra) or tablets in portrait mode */
 @media (min-width: 768px) {
 }
 
-/* Tablets in landscape mode, older notebooks */
+/* Tablets in landscape mode or old notebooks */
 @media (min-width: 992px) {
 }
 
-/* Desktop PC or modern notebook */
+/* Modern notebooks or desktop PC monitors */
 @media (min-width: 1400px) {
 }
