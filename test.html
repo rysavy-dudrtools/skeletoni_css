@@ -22,6 +22,8 @@
       body {
         margin-top: 1rem;
         margin-bottom: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
       }
 
       .example-grid-colors .column {
@@ -298,6 +300,13 @@
                 <em>emphasis</em>, <mark>mark</mark>, <samp>samp</samp> and
                 <u>underline</u> are styled by Skeletoni.
               </p>
+              <p>
+                <del>deleted</del>, <ins>inserted</ins>, <s>Strikethrough</s>,
+                <small>small</small>, text with sub <sub>sub</sub>, text with sup
+                <sup>sup</sup>,
+                <abbr title="Abbreviation" data-tooltip="Abbreviation">abbr</abbr>,
+                <kbd>Kbd</kbd> look like this.
+              </p>
             </div>
             <div class="six columns">
               <h1>
@@ -349,59 +358,6 @@
             <input class="button-primary" type="button" value="button input" />
             <button class="button-primary" disabled>Button disabled</button>
           </div>
-        </div>
-      </div>
-      <hr />
-      <!-- Forms -->
-      <div id="forms">
-        <h2>Forms</h2>
-        <p>
-          All inputs, select, and buttons are normalized for a common height so inputs
-          can be stacked or placed alongside each other. Input elements with built-in
-          validation change border color to warning if input is invalid (try to write
-          email without @).
-        </p>
-        <div class="docs-example docs-example-forms">
-          <form>
-            <div class="container">
-              <div class="six columns">
-                <label for="exampleEmailInput">Your email</label>
-                <input
-                  type="email"
-                  placeholder="test@mailbox.com"
-                  id="exampleEmailInput"
-                />
-              </div>
-              <div class="six columns">
-                <label for="exampleRecipientInput">Reason for contacting</label>
-                <select id="exampleRecipientInput">
-                  <option value="Option 1">Questions</option>
-                  <option value="Option 2">Admiration</option>
-                  <option value="Option 3">Can I get your number?</option>
-                </select>
-              </div>
-            </div>
-            <label for="exampleMessage">Message</label>
-            <textarea placeholder="Hi Dave &hellip;" id="exampleMessage"></textarea>
-            <p>Please select your favorite Web language:</p>
-            <label
-              ><input type="radio" id="html" name="fav_language" value="HTML" /><span
-                for="html"
-                >HTML</span
-              ></label
-            >
-            <label
-              ><input type="radio" id="css" name="fav_language" value="CSS" /><span
-                for="css"
-                >CSS</span
-              ></label
-            >
-            <label class="example-send-yourself-copy">
-              <input type="checkbox" />
-              <span>Send a copy to yourself</span>
-            </label>
-            <input class="button-primary" type="submit" value="Submit" />
-          </form>
         </div>
       </div>
       <hr />
@@ -516,7 +472,279 @@
         </div>
       </div>
       <hr />
+
+      <!-- Blockquote-->
+      <blockquote>
+        "This is text inside 'blocquote' element, no special format is used."
+        <footer>
+          <cite>- This is inside 'footer' and 'cite' elements.</cite>
+        </footer>
+      </blockquote>
+
+      <!-- Form elements-->
+      <!-- Forms -->
+      <div id="forms">
+        <h2>Forms</h2>
+        <p>
+          All inputs, select, and buttons are normalized for a common height so inputs
+          can be stacked or placed alongside each other. Input elements with built-in
+          validation change border color to warning if input is invalid (try to write
+          email without @).
+        </p>
+        <div class="docs-example docs-example-forms">
+          <form>
+            <div class="container">
+              <div class="six columns">
+                <label for="exampleEmailInput">Your email</label>
+                <input
+                  type="email"
+                  placeholder="test@mailbox.com"
+                  id="exampleEmailInput"
+                />
+              </div>
+              <div class="six columns">
+                <label for="exampleRecipientInput">Element 'select'</label>
+                <select id="exampleRecipientInput">
+                  <option value="Option 1">Questions</option>
+                  <option value="Option 2">Admiration</option>
+                  <option value="Option 3">Can I get your number?</option>
+                </select>
+              </div>
+            </div>
+            <label for="exampleMessage">Message</label>
+            <textarea placeholder="Hi Dave &hellip;" id="exampleMessage"></textarea>
+            <p>Please select your favorite Web language:</p>
+            <label
+              ><input type="radio" id="html" name="fav_language" value="HTML" /><span
+                for="html"
+                >HTML</span
+              ></label
+            >
+            <label
+              ><input type="radio" id="css" name="fav_language" value="CSS" /><span
+                for="css"
+                >CSS</span
+              ></label
+            >
+            <label class="example-send-yourself-copy">
+              <input type="checkbox" />
+              <span>Send a copy to yourself</span>
+            </label>
+            <input class="button-primary" type="submit" value="Submit" />
+          </form>
+        </div>
+
+        <form>
+          <h3>Another form elements</h3>
+
+          <!-- Search -->
+          <label for="search">Search</label>
+          <input type="search" id="search" name="search" placeholder="Search" />
+
+          <!-- Text -->
+          <label for="text">Text</label>
+          <input type="text" id="text" name="text" placeholder="Text" />
+          <small>Text in 'small' element.</small>
+
+          <!-- File browser -->
+          <label for="file"
+            >File browser
+            <input type="file" id="file" name="file" />
+          </label>
+
+          <!-- Range slider control -->
+          <label for="range"
+            >Range slider
+            <input type="range" min="0" max="100" value="50" id="range" name="range" />
+          </label>
+
+          <!-- States -->
+          <div>
+            <label for="valid">
+              The :valid CSS pseudo-class is not styled.
+              <input
+                type="text"
+                id="valid"
+                name="valid"
+                placeholder="xxx"
+                aria-invalid="false"
+              />
+            </label>
+            <label for="invalid">
+              The :invalid CSS pseudo-class is not styled.
+              <input
+                type="text"
+                id="invalid"
+                name="invalid"
+                placeholder="xxx"
+                aria-invalid="true"
+              />
+            </label>
+            <label for="disabled">
+              The :disabled CSS pseudo-class is styled.
+              <input
+                type="text"
+                id="disabled"
+                name="disabled"
+                placeholder="xxx"
+                disabled
+              />
+            </label>
+          </div>
+
+          <div>
+            <!-- Date-->
+            <label for="date"
+              >Date
+              <input type="date" id="date" name="date" />
+            </label>
+
+            <!-- Time-->
+            <label for="time"
+              >Time
+              <input type="time" id="time" name="time" />
+            </label>
+
+            <!-- Color-->
+            <label for="color"
+              >Color
+              <input type="color" id="color" name="color" value="#0eaaaa" />
+            </label>
+          </div>
+
+          <div>
+            <fieldset>
+              <legend><strong>Fieldset</strong></legend>
+              <label for="radio-1">
+                <input type="radio" id="radio-1" name="radio" value="radio-1" checked />
+                Radio button
+              </label>
+              <label for="checkbox-1">
+                <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
+                Checkbox
+              </label>
+              <label for="switch-1">
+                <input
+                  type="checkbox"
+                  id="switch-1"
+                  name="switch-1"
+                  role="switch"
+                  checked
+                />
+                Switch has no special appearance, behaves like default checkbox
+              </label>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+      <hr />
+      <!-- ./ Form elements-->
+
+      <!-- Modal -->
+      <section id="modal">
+        <h2>Modal</h2>
+        <button
+          class="contrast"
+          data-target="modal-example"
+          onclick="toggleModal(event)"
+        >
+          Launch demo modal
+        </button>
+      </section>
+      <!-- ./ Modal -->
+
+      <!-- Accordions -->
+      <section id="accordions">
+        <h2>Accordions</h2>
+        <details>
+          <summary>Accordion 1</summary>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna
+            diam, tincidunt nec porta sed, auctor id velit.
+          </p>
+        </details>
+        <details open>
+          <summary>Accordion 2</summary>
+          <ul>
+            <li>Vestibulum id elit quis massa interdum sodales.</li>
+            <li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
+          </ul>
+        </details>
+      </section>
+      <!-- ./ Accordions -->
+
+      <!-- Article-->
+      <article id="article">
+        <h2>Article</h2>
+        <p>Article has no special format.</p>
+        <p>
+          Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed ultricies
+          dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla
+          iaculis eros a elit pharetra egestas.
+        </p>
+      </article>
+      <!-- ./ Article-->
+
+      <!-- Group -->
+      <section id="group">
+        <h2>Group</h2>
+        <p>Fieldset with role 'group' is not styled by Skeletoni</p>
+        <form>
+          <fieldset role="group">
+            <input placeholder="Input" />
+            <input type="submit" value="Submit" />
+          </fieldset>
+        </form>
+      </section>
+      <!-- ./ Group -->
+
+      <!-- Progress -->
+      <section id="progress">
+        <h2>Progress bar</h2>
+        <div>
+          <progress id="progress-1" value="25" max="100"></progress>
+        </div>
+        <div><progress id="progress-2"></progress></div>
+      </section>
+      <!-- ./ Progress -->
+
+      <!-- Loading -->
+      <section id="loading">
+        <h2>Loading</h2>
+        <p>The 'aria-busy=true' on elements is not styled.</p>
+        <article aria-busy="true"></article>
+        <p>There is no animation on button either.</p>
+        <button aria-busy="true">Please wait…</button>
+      </section>
+      <!-- ./ Loading -->
+
+      <!-- Modal example -->
+      <dialog id="modal-example">
+        <article>
+          <header>
+            <h3>Element 'dialog'</h3>
+          </header>
+          <p>
+            Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue
+            finibus pellentesque.
+          </p>
+          <footer>
+            <button
+              role="button"
+              class="secondary"
+              data-target="modal-example"
+              onclick="toggleModal(event)"
+            >
+              Cancel</button
+            ><button autofocus data-target="modal-example" onclick="toggleModal(event)">
+              Confirm
+            </button>
+          </footer>
+        </article>
+      </dialog>
+      <!-- ./ Modal example -->
     </div>
+
     <footer>
       <div class="container">
         <div class="offset-by-four third-of columns">
@@ -529,5 +757,15 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const toggleModal = (event) => {
+        event.preventDefault();
+        const modal = document.getElementById(event.currentTarget.dataset.target);
+
+        if (!modal) return;
+        modal.open ? modal.close() : modal.showModal();
+      };
+    </script>
   </body>
 </html>
