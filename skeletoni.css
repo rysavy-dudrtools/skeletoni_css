@@ -1,16 +1,17 @@
 /*
-* Skeletoni V0.5.0 (Skeleton Industrial) 
-* Copyright 2024, Jindrich Rysavy, see https://github.com/rysavy-dudrtools/skeletoni_css
+* Skeletoni V0.6.0 (Skeleton Industrial)
+* Copyright 2026, Jindrich Rysavy, see https://github.com/rysavy-dudrtools/skeletoni_css
 * Free to use under the MIT license http://www.opensource.org/licenses/mit-license.php
 * BASED ON Skeleton V2.0.4 by Dave Gamache, see www.getskeleton.com
-* Skeletoni is not "Skeleton 2" but rather independent variation created
-* mostly for industrial aplications which require fast development, readability, 
-* touch control, responsive layout and light/dark mode but not animations or fancy features.
+* Skeletoni is independent variation created mostly for industrial aplications which 
+* require fast development, readability, touch control, responsive layout, light/dark mode.
+* Browser baseline: Chrome 81+, Safari 13+ on macOS, Safari 13+ on iOS/iPadOS
+* (native modal <dialog> requires Safari 15.4+, which is not CSS related).
+*
 * For more complex but still simple alternative see Pico CSS https://picocss.com/docs/classless
-*/
-
-/* Normalization rules from modern-normalize v3.0.1 (under the MIT License)
-/* see https://github.com/sindresorhus/modern-normalize */
+*
+* Normalization rules from modern-normalize v3.0.1 (under the MIT License)
+  see https://github.com/sindresorhus/modern-normalize */
 
 *,
 ::before,
@@ -91,6 +92,9 @@ summary {
 }
 
 .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: 0;
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -99,21 +103,19 @@ summary {
   box-sizing: border-box;
 }
 
-.container::after {
-  content: "";
-  display: table;
-  clear: both;
+.container > :not(.column):not(.columns) {
+  grid-column: 1 / -1;
 }
 
 .column,
 .columns {
-  width: 100%;
-  float: left;
+  grid-column-end: span 1;
+  min-width: 0;
   box-sizing: border-box;
 }
 
 @media (max-width: 576px) {
-  /* utility class which can be used for example to hide long text from buttons 
+  /* utility class which can be used for example to hide long text from buttons
   like <button><span class="hide-on-mobile">list of </span>users</button>*/
   .hide-on-mobile {
     display: none;
@@ -134,222 +136,183 @@ summary {
   on narrow screens (mobiles in landscape mode, tablets in portrait mode)
   This may create unexpected layouts. Delete following section to keep 12-columns grid.
   */
-  .column,
-  .columns {
-    margin-left: 3%;
+  .container {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 3%;
   }
 
   .one.column,
   .one.columns,
   .two.columns {
-    width: 13.666666665%;
+    grid-column-end: span 1;
   }
-
   .three.columns,
   .quarter-of.columns,
   .one-quarter-of.columns,
   .four.columns,
   .third-of.columns,
   .one-third-of.columns {
-    width: 30.33333332%;
+    grid-column-end: span 2;
   }
-
   .five.columns,
   .six.columns,
   .half-of.columns,
   .two-quarters-of.columns,
   .seven.columns {
-    width: 47%;
+    grid-column-end: span 3;
   }
-
   .eight.columns,
   .two-thirds-of.columns,
   .nine.columns,
   .three-quarters-of.columns {
-    width: 63.666666665%;
+    grid-column-end: span 4;
   }
-
   .ten.columns,
   .eleven.columns {
-    width: 80.33333333%;
+    grid-column-end: span 5;
   }
-
   .twelve.columns,
   .all-of.columns,
   .four-quarters-of.columns {
-    width: 97%;
+    grid-column-end: span 6;
   }
 
-  /* Offsets */
   .offset-by-one.column,
   .offset-by-one.columns,
   .offset-by-two.columns {
-    margin-left: 19.666666665%;
+    grid-column-start: 2;
   }
-
   .offset-by-three.columns,
   .offset-by-quarter-of.columns,
   .offset-by-one-quarter-of.columns,
   .offset-by-four.columns,
   .offset-by-third-of.columns,
   .offset-by-one-third-of.columns {
-    margin-left: 36.33333332%;
+    grid-column-start: 3;
   }
-
   .offset-by-five.columns,
   .offset-by-six.columns,
   .offset-by-half-of.columns,
   .offset-by-two-quarters-of.columns,
   .offset-by-seven.columns {
-    margin-left: 53%;
+    grid-column-start: 4;
   }
-
   .offset-by-eight.columns,
   .offset-by-two-thirds-of.columns,
   .offset-by-nine.columns,
   .offset-by-three-quarters-of.columns {
-    margin-left: 69.666666665%;
+    grid-column-start: 5;
   }
-
   .offset-by-ten.columns,
   .offset-by-eleven.columns {
-    margin-left: 86.33333333%;
+    grid-column-start: 6;
   }
 }
 
+/* For devices equal or larger than 992px */
 @media (min-width: 992px) {
-  .column,
-  .columns {
-    margin-left: 3%;
+  .container {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 3%;
+    justify-content: normal;
   }
 
-  .column:first-child,
-  .columns:first-child {
-    margin-left: 0;
-  }
-
-  /* Columns */
   .one.column,
   .one.columns {
-    width: 5.583333332%;
+    grid-column-end: span 1;
   }
-
   .two.columns {
-    width: 14.166666665%;
+    grid-column-end: span 2;
   }
-
   .three.columns,
   .quarter-of.columns,
   .one-quarter-of.columns {
-    width: 22.75%;
+    grid-column-end: span 3;
   }
-
   .four.columns,
   .third-of.columns,
   .one-third-of.columns {
-    width: 31.333333332%;
+    grid-column-end: span 4;
   }
-
   .five.columns {
-    width: 39.916666665%;
+    grid-column-end: span 5;
   }
-
   .six.columns,
   .half-of.columns,
   .two-quarters-of.columns {
-    width: 48.5%;
+    grid-column-end: span 6;
   }
-
   .seven.columns {
-    width: 57.08333332%;
+    grid-column-end: span 7;
   }
-
   .eight.columns,
   .two-thirds-of.columns {
-    width: 65.66666665%;
+    grid-column-end: span 8;
   }
-
   .nine.columns,
   .three-quarters-of.columns {
-    width: 74.25%;
+    grid-column-end: span 9;
   }
-
   .ten.columns {
-    width: 82.833333332%;
+    grid-column-end: span 10;
   }
-
   .eleven.columns {
-    width: 91.416666665%;
+    grid-column-end: span 11;
   }
-
   .twelve.columns,
   .all-of.columns,
   .four-quarters-of.columns {
-    width: 100%;
-    margin-left: 0;
+    grid-column-end: span 12;
   }
 
-  /* Offsets */
   .offset-by-one.column,
   .offset-by-one.columns {
-    margin-left: 8.583333333%;
+    grid-column-start: 2;
   }
-
   .offset-by-two.columns {
-    margin-left: 17.166666667%;
+    grid-column-start: 3;
   }
-
   .offset-by-three.columns,
   .offset-by-quarter-of.columns,
   .offset-by-one-quarter-of.columns {
-    margin-left: 25.75%;
+    grid-column-start: 4;
   }
-
   .offset-by-four.columns,
   .offset-by-third-of.columns,
   .offset-by-one-third-of.columns {
-    margin-left: 34.333333333%;
+    grid-column-start: 5;
   }
-
   .offset-by-five.columns {
-    margin-left: 43.3333333333%;
+    grid-column-start: 6;
   }
-
   .offset-by-six.columns,
   .offset-by-half-of.columns,
   .offset-by-two-quarters-of.columns {
-    margin-left: 51.5%;
+    grid-column-start: 7;
   }
-
   .offset-by-seven.columns {
-    margin-left: 59.583333331%;
+    grid-column-start: 8;
   }
-
   .offset-by-eight.columns,
   .offset-by-two-thirds-of.columns {
-    margin-left: 68.3333333333%;
+    grid-column-start: 9;
   }
-
   .offset-by-nine.columns,
   .offset-by-three-quarters-of.columns {
-    margin-left: 77.25%;
+    grid-column-start: 10;
   }
-
   .offset-by-ten.columns {
-    margin-left: 85.833333333%;
+    grid-column-start: 11;
   }
-
   .offset-by-eleven.columns {
-    margin-left: 94.416666667%;
+    grid-column-start: 12;
   }
 }
 
 :root {
-  /* automatically switch between light and dark themes using browser/OS settings */
-  color-scheme: light dark;
+  color-scheme: light dark; /* auto-switch light/dark themes using browser/OS settings */
 
-  --lred: #c62828;
-  /* light (lred) and dark (dred) color CSS variables */
+  --lred: #c62828; /* light (lred) and dark (dred) color CSS variables */
   --dred: #e57373;
   --lorange: #ef6c00;
   --dorange: #ffb74d;
@@ -368,26 +331,66 @@ summary {
   --lgrey: #37474f;
   --dgrey: #90a4ae;
 
-  --lbg: #fff;
-  /* background for light scheme */
-  --lfg: #222;
-  /* foreground for light scheme */
+  --lbg: #fff; /* background for light scheme */
+  --lfg: #222; /* foreground for light scheme */
   --ldisabled: #444;
-  --lprimary: var(--lblue);
-  /* color of primary button for dark scheme */
-  --lfocus: color-mix(in srgb, var(--lprimary), #fff 25%); /* #2196f3; */
-  /* borders of focused button, links, background of selection */
-  --lcode: color-mix(in srgb, var(--lbg), #000 10%);
-  /* background of pre and code */
+  --lprimary: var(--lblue); /* color of primary button for light scheme */
+  --lfocus: #2196f3; /* borders of focused button, links, background of selection */
+  --lcode: #e6e6e6; /* background of pre, code */
 
-  --dbg: #000;
-  /* background for dark scheme*/
-  --dfg: #d9d9d9;
-  /*foreground for dark scheme*/
+  --dbg: #000; /* background for dark scheme*/
+  --dfg: #d9d9d9; /*foreground for dark scheme*/
   --ddisabled: #888;
   --dprimary: var(--dblue);
-  --dfocus: color-mix(in srgb, var(--dprimary), #fff 25%); /* #2196f3; */ /*#bbdefb;*/
-  --dcode: color-mix(in srgb, var(--dbg), #fff 20%);
+  --dfocus: #bbdefb;
+  --dcode: #333;
+
+  --red: var(--lred);
+  --orange: var(--lorange);
+  --lime: var(--llime);
+  --green: var(--lgreen);
+  --cyan: var(--lcyan);
+  --blue: var(--lblue);
+  --purple: var(--lpurple);
+  --brown: var(--lbrown);
+  --grey: var(--lgrey);
+  --bg: var(--lbg);
+  --fg: var(--lfg);
+  --disabled: var(--ldisabled);
+  --primary: var(--lprimary);
+  --focus: var(--lfocus);
+  --code: var(--lcode);
+}
+
+/*color-mix is supported from Safari 16.2 and Chrome 111; declaration of focus/code 
+with fixed colors (see above) can be removed if older browsers are not used*/
+@supports (color: color-mix(in srgb, black, white)) {
+  :root {
+    --lfocus: color-mix(in srgb, var(--lprimary), #fff 25%);
+    --dfocus: color-mix(in srgb, var(--dprimary), #fff 25%);
+    --lcode: color-mix(in srgb, var(--lbg), #000 10%);
+    --dcode: color-mix(in srgb, var(--dbg), #fff 20%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --red: var(--dred);
+    --orange: var(--dorange);
+    --lime: var(--dlime);
+    --green: var(--dgreen);
+    --cyan: var(--dcyan);
+    --blue: var(--dblue);
+    --purple: var(--dpurple);
+    --brown: var(--dbrown);
+    --grey: var(--dgrey);
+    --bg: var(--dbg);
+    --fg: var(--dfg);
+    --disabled: var(--ddisabled);
+    --primary: var(--dprimary);
+    --focus: var(--dfocus);
+    --code: var(--dcode);
+  }
 }
 
 html {
@@ -395,79 +398,76 @@ html {
   tab-size: 4;
 }
 
-/* Color classes */
 .primary {
-  color: light-dark(var(--lprimary), var(--dprimary));
+  color: var(--primary);
 }
 
 .warning {
-  color: light-dark(var(--lred), var(--dred));
+  color: var(--red);
 }
 
 .success {
-  color: light-dark(var(--lgreen), var(--dgreen));
+  color: var(--green);
 }
 
 .red {
-  color: light-dark(var(--lred), var(--dred));
+  color: var(--red);
 }
 
 .orange {
-  color: light-dark(var(--lorange), var(--dorange));
+  color: var(--orange);
 }
 
 .lime,
 .yellow {
-  /*this is actually lime, yellow would have insufficient contrast*/
-  color: light-dark(var(--llime), var(--dlime));
+  color: var(--lime); /*this is actually lime, yellow would have insufficient contrast*/
 }
 
 .green {
-  color: light-dark(var(--lgreen), var(--dgreen));
+  color: var(--green);
 }
 
 .cyan {
-  color: light-dark(var(--lcyan), var(--dcyan));
+  color: var(--cyan);
 }
 
 .blue {
-  color: light-dark(var(--lblue), var(--dblue));
+  color: var(--blue);
 }
 
 .purple {
-  color: light-dark(var(--lpurple), var(--dpurple));
+  color: var(--purple);
 }
 
 .brown {
-  color: light-dark(var(--lbrown), var(--dbrown));
+  color: var(--brown);
 }
 
 .gray,
 .grey {
-  color: light-dark(var(--lgrey), var(--dgrey));
+  color: var(--grey);
 }
 
 body {
-  background-color: light-dark(var(--lbg), var(--dbg));
-  color: light-dark(var(--lfg), var(--dfg));
+  background-color: var(--bg);
+  color: var(--fg);
   margin: 0;
 }
 
 :root {
-  scrollbar-color: var(--theme-grey, light-dark(var(--lgrey), var(--dgrey)))
-    var(--theme-bg, light-dark(var(--lbg), var(--dbg)));
+  scrollbar-color: var(--theme-grey, var(--grey)) var(--theme-bg, var(--bg));
 }
 
 ::selection,
 mark {
-  color: light-dark(var(--lbg), var(--dbg));
-  background: light-dark(var(--lfocus), var(--dfocus));
+  color: var(--bg);
+  background: var(--focus);
 }
 
 dialog {
-  color: light-dark(var(--lfg), var(--dfg));
-  background-color: light-dark(var(--lcode), var(--dcode));
-  border-color: light-dark(var(--lfg), var(--dfg));
+  color: var(--fg);
+  background-color: var(--code);
+  border-color: var(--fg);
   border-radius: 8px;
   box-sizing: border-box;
   border-style: solid;
@@ -479,13 +479,17 @@ dialog form[method="dialog"] {
   float: right;
 }
 
+dialog::backdrop {
+  background-color: var(--code);
+}
+
 a {
-  color: light-dark(var(--lprimary), var(--dprimary));
+  color: var(--primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: light-dark(var(--lfocus), var(--dfocus));
+  color: var(--focus);
   text-decoration: underline;
 }
 
@@ -571,7 +575,7 @@ input[type="checkbox"],
 input[type="radio"],
 input[type="range"],
 progress {
-  accent-color: light-dark(var(--lprimary), var(--dprimary));
+  accent-color: var(--primary);
 }
 
 input[type="checkbox"],
@@ -584,7 +588,7 @@ input[type="range"] {
 input[type="checkbox"]:disabled,
 input[type="radio"]:disabled,
 input[type="range"]:disabled {
-  accent-color: light-dark(var(--ldisabled), var(--ddisabled));
+  accent-color: var(--disabled);
   pointer-events: none;
 }
 
@@ -599,13 +603,13 @@ label:has(> input[type="radio"]) {
 
 label:has(> input[type="checkbox"]):hover,
 label:has(> input[type="radio"]):hover {
-  border-color: light-dark(var(--lfocus), var(--dfocus));
-  color: light-dark(var(--lfocus), var(--dfocus));
+  border-color: var(--focus);
+  color: var(--focus);
 }
 
 label:has(> input[type="checkbox"]:disabled),
 label:has(> input[type="radio"]:disabled) {
-  color: light-dark(var(--ldisabled), var(--ddisabled));
+  color: var(--disabled);
   pointer-events: none;
   border-bottom: 1px solid transparent;
 }
@@ -629,11 +633,11 @@ input[type="button"] {
   border-radius: 8px;
   cursor: pointer;
   box-sizing: border-box;
-  color: light-dark(var(--lfg), var(--dfg));
+  color: var(--fg);
   border-style: solid;
   border-width: 1px 2px 2px 1px;
-  border-color: light-dark(var(--lfg), var(--dfg));
-  background-color: light-dark(var(--lbg), var(--dbg));
+  border-color: var(--fg);
+  background-color: var(--bg);
   font-size: 0.8rem;
 }
 
@@ -645,22 +649,22 @@ details summary {
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  color: light-dark(var(--lfg), var(--dfg));
+  color: var(--fg);
   font-size: 0.8rem;
   border-bottom: 1px solid;
   border-color: transparent;
 }
 
 details summary:hover {
-  border-color: light-dark(var(--lfocus), var(--dfocus));
+  border-color: var(--focus);
 }
 
 .button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  color: light-dark(var(--lprimary), var(--dprimary));
-  border-color: light-dark(var(--lfg), var(--dfg));
+  color: var(--primary);
+  border-color: var(--fg);
 }
 
 .button:hover,
@@ -669,7 +673,7 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-  color: light-dark(var(--lfocus), var(--dfocus));
+  color: var(--focus);
   text-decoration: underline;
   outline: 0;
 }
@@ -682,7 +686,7 @@ input[type="reset"]:focus,
 input[type="button"]:focus {
   border: 1px solid;
   padding-right: 21px;
-  border-color: light-dark(var(--lfocus), var(--dfocus));
+  border-color: var(--focus);
   outline: 0;
 }
 
@@ -692,8 +696,8 @@ button:disabled,
 input[type="submit"]:disabled,
 input[type="reset"]:disabled,
 input[type="button"]:disabled {
-  border-color: light-dark(var(--ldisabled), var(--ddisabled));
-  color: light-dark(var(--ldisabled), var(--ddisabled));
+  border-color: var(--disabled);
+  color: var(--disabled);
   pointer-events: none;
   cursor: not-allowed;
 }
@@ -718,11 +722,11 @@ select {
   border-radius: 8px;
   box-shadow: none;
   box-sizing: border-box;
-  background-color: light-dark(var(--lbg), var(--dbg));
-  color: light-dark(var(--lfg), var(--dfg));
+  background-color: var(--bg);
+  color: var(--fg);
   border-style: solid;
   border-width: 1px 2px 2px 1px;
-  border-color: light-dark(var(--lfg), var(--dfg));
+  border-color: var(--fg);
   font-size: 1rem;
 }
 
@@ -765,7 +769,7 @@ select:focus {
   text-decoration: none;
   border: 1px solid;
   padding-right: 11px;
-  border-color: light-dark(var(--lfocus), var(--dfocus));
+  border-color: var(--focus);
   outline: 0;
 }
 
@@ -789,7 +793,7 @@ legend {
 fieldset {
   padding: 12px 15px;
   border: 0px;
-  background-color: light-dark(var(--lcode), var(--dcode));
+  background-color: var(--code);
 }
 
 fieldset > legend {
@@ -798,13 +802,13 @@ fieldset > legend {
   padding-left: 5px;
   padding-right: 5px;
   padding-inline: 5px;
-  background-color: light-dark(var(--lbg), var(--dbg));
+  background-color: var(--bg);
 }
 
 input[type="checkbox"],
 input[type="radio"] {
   border: 1px solid;
-  border-color: light-dark(var(--lfocus), var(--dfocus));
+  border-color: var(--focus);
   margin-right: 0.5rem;
 }
 
@@ -818,7 +822,7 @@ input[type="url"]::placeholder,
 input[type="password"]::placeholder,
 textarea::placeholder,
 select::placeholder {
-  color: light-dark(var(--ldisabled), var(--ddisabled));
+  color: var(--disabled);
 }
 
 input:invalid,
@@ -826,12 +830,11 @@ input[type="email"]:invalid,
 input[type="number"]:invalid,
 input[type="search"]:invalid,
 input[type="text"]:invalid,
-/* type "tel" is not validated automatically, see
- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel */
+/* "tel" is not auto-validated, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel */
 input[type="tel"]:invalid,
 input[type="url"]:invalid,
 input[type="password"]:invalid {
-  border-color: light-dark(var(--lred), var(--dred));
+  border-color: var(--red);
 }
 
 input:disabled,
@@ -844,9 +847,9 @@ input[type="url"]:disabled,
 input[type="password"]:disabled,
 textarea:disabled,
 select:disabled {
-  border-color: light-dark(var(--ldisabled), var(--ddisabled));
-  color: light-dark(var(--ldisabled), var(--ddisabled));
-  background-color: light-dark(var(--lbg), var(--dbg));
+  border-color: var(--disabled);
+  color: var(--disabled);
+  background-color: var(--bg);
   pointer-events: none;
 }
 
@@ -880,8 +883,8 @@ code,
 pre,
 kbd,
 samp {
-  color: light-dark(var(--lfg), var(--dfg));
-  background-color: light-dark(var(--lcode), var(--dcode));
+  color: var(--fg);
+  background-color: var(--code);
   padding: 2px;
 }
 
@@ -908,7 +911,7 @@ td {
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid;
-  border-color: light-dark(var(--lfg), var(--dfg));
+  border-color: var(--fg);
   overflow: hidden;
 }
 
@@ -925,7 +928,7 @@ td:last-child {
 table {
   overflow-x: auto;
   border: 0px;
-  border-color: light-dark(var(--lfg), var(--dfg));
+  border-color: var(--fg);
   border-collapse: collapse;
   box-sizing: border-box;
   float: none;
@@ -961,11 +964,12 @@ form {
 }
 
 hr {
+  width: 100%;
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 1px 0 0 0;
   border-style: solid;
-  border-color: light-dark(var(--lfg), var(--dfg));
+  border-color: var(--fg);
 }
 
 .center {
